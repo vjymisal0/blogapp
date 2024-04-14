@@ -13,13 +13,15 @@ connectDb()
 app.use(express.json())
 app.use(cors())
 
-// routes
+// route to create a new blog post
 app.post('/post-blog', async (req, res) => {
     const { title, description } = req.body
     const newBlogPost = new BlogPost({ title, description })
     await newBlogPost.save()
     res.json("Blog post saved successfully", newBlogPost)
 })
+
+// route to get all blog posts
 
 app.get("/get-blogs", async (req, res) => {
     const blogPosts = await BlogPost.find()
@@ -29,6 +31,8 @@ app.get("/get-blogs", async (req, res) => {
         res.json(blogPosts)
     }
 })
+
+// route to delete a blog post
 
 
 // listen server
