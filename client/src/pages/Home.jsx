@@ -5,14 +5,14 @@ const Home = () => {
   return (
     <div className="mt-10">
       <div className="w-[40vw] mx-auto border-2 ">
-        <div className="flex justify-end text-lg gap-10 my-2">
+        <div className="flex justify-end text-lg gap-10 my-2 m-3">
           <AiFillDelete
             cursor="pointer"
             className="text-gray-400 hover:text-red-400"
           />
           <MdOutlineEdit
-            cursor="pointer"
             className="text-gray-400 hover:text-red-400"
+            cursor="pointer"
           />
         </div>
         <h2 className="text-lg font-bold ">

@@ -8,13 +8,15 @@ import "./App.css";
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/create" element={<CreateBlog />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="text-white">
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create" element={<CreateBlog />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </>
   );
 };
