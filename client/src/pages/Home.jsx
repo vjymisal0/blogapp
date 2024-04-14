@@ -4,7 +4,7 @@ import { MdOutlineEdit } from "react-icons/md";
 const Home = () => {
   return (
     <div className="mt-10">
-      <div className="w-[40vw] mx-auto border-2 p-4  rounded-md">
+      <div className="w-[40vw] mx-auto border p-4  rounded-md">
         <div className="flex justify-end text-lg gap-3">
           <AiFillDelete
             cursor="pointer"
