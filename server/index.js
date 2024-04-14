@@ -18,7 +18,16 @@ app.post('/post-blog', async (req, res) => {
     const { title, description } = req.body
     const newBlogPost = new BlogPost({ title, description })
     await newBlogPost.save()
-    res.json(newBlogPost)
+    res.json("Blog post saved successfully", newBlogPost)
+})
+
+app.get("/get-blogs", async (req, res) => {
+    const blogPosts = await BlogPost.find()
+    if (!blogPosts) {
+        return res.status(404).json({ message: "No blog posts found" })
+    } else {
+        res.json(blogPosts)
+    }
 })
 
 
