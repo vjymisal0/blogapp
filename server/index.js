@@ -19,7 +19,6 @@ app.post('/post-blog', async (req, res) => {
     const newBlogPost = new BlogPost({ title, description })
     await newBlogPost.save()
     res.json(newBlogPost)
-
 })
 
 
