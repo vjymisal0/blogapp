@@ -4,8 +4,8 @@ import { MdOutlineEdit } from "react-icons/md";
 const Home = () => {
   return (
     <div className="mt-10">
-      <div className="w-[40vw] mx-auto border-2 ">
-        <div className="flex justify-end text-lg gap-10 my-2 m-3">
+      <div className="w-[40vw] mx-auto border-2 p-4  rounded-md">
+        <div className="flex justify-end text-lg gap-3">
           <AiFillDelete
             cursor="pointer"
             className="text-gray-400 hover:text-red-400"
@@ -15,15 +15,15 @@ const Home = () => {
             cursor="pointer"
           />
         </div>
-        <h2 className="text-lg font-bold ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </h2>
-        <h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sit
-          molestiae eos excepturi in numquam officiis dolorem reprehenderit
-          accusamus hic quos voluptate error architecto, deserunt fuga dicta
-          exercitationem itaque consequatur praesentium suscipit ullam tempore
-          necessitatibus optio sapiente! A, eius voluptatem?
+        <h2 className="text-lg font-bold text-justify ">Why learn React?</h2>
+        <h3 className="font-semibold text-stone-100 text-justify">
+          React is a JavaScript library for building user interfaces. It is
+          maintained by Facebook and a community of individual developers and
+          companies. React can be used as a base in the development of
+          single-page or mobile applications. However, React is only concerned
+          with state management and rendering that state to the DOM, so creating
+          React applications usually requires the use of additional libraries
+          for routing, as well as certain client-side functionality.
         </h3>
       </div>
     </div>
