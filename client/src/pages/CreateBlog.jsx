@@ -28,7 +28,8 @@ const CreateBlog = () => {
         <button
           type="button"
           class="text-white  border rounded-md mx-auto px-6 hover:bg-white 
-          hover:text-blue-900"
+          hover:text-blue-900
+          hover:scale-110 transition-all"
         >
           Post
         </button>

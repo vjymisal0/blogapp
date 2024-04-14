@@ -5,18 +5,20 @@ const Home = () => {
   return (
     <div className="mt-10">
       <div className="w-[40vw] mx-auto border p-4  rounded-md">
-        <div className="flex justify-end text-lg gap-3">
+        <div className="flex justify-end gap-3 text-3xl ">
           <AiFillDelete
             cursor="pointer"
-            className="text-gray-400 hover:text-red-400"
+            className="text-gray-400  hover:scale-110 transition-all hover:text-red-400"
           />
           <MdOutlineEdit
-            className="text-gray-400 hover:text-red-400"
+            className="text-gray-400 hover:scale-110 transition-all hover:text-red-400"
             cursor="pointer"
           />
         </div>
-        <h2 className="text-lg font-bold text-justify ">Why learn React?</h2>
-        <h3 className="font-semibold text-stone-100 text-justify">
+        <h2 className="text-xl font-bold text-justify  my-2">
+          Why learn React?
+        </h2>
+        <h3 className="font-semibold text-sm text-justify m-3">
           React is a JavaScript library for building user interfaces. It is
           maintained by Facebook and a community of individual developers and
           companies. React can be used as a base in the development of
