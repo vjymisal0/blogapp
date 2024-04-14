@@ -6,14 +6,24 @@ const Home = () => {
     <div className="mt-10">
       <div className="w-[40vw] mx-auto border-2 ">
         <div className="flex justify-end text-lg gap-10 my-2">
-          <AiFillDelete cursor="pointer" />
-          <MdOutlineEdit cursor="pointer" />
+          <AiFillDelete
+            cursor="pointer"
+            className="text-gray-400 hover:text-red-400"
+          />
+          <MdOutlineEdit
+            cursor="pointer"
+            className="text-gray-400 hover:text-red-400"
+          />
         </div>
         <h2 className="text-lg font-bold ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </h2>
         <h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sit molestiae eos excepturi in numquam officiis dolorem reprehenderit accusamus hic quos voluptate error architecto, deserunt fuga dicta exercitationem itaque consequatur praesentium suscipit ullam tempore necessitatibus optio sapiente! A, eius voluptatem?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sit
+          molestiae eos excepturi in numquam officiis dolorem reprehenderit
+          accusamus hic quos voluptate error architecto, deserunt fuga dicta
+          exercitationem itaque consequatur praesentium suscipit ullam tempore
+          necessitatibus optio sapiente! A, eius voluptatem?
         </h3>
       </div>
     </div>
