@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const port = 3000;
 const { connectDb } = require('./connection')
-const { BlogPost } = require('./models/BlogPost')
+const BlogPost = require('./models/BlogPost')
 
 
 // connect to database
@@ -14,8 +14,12 @@ app.use(express.json())
 app.use(cors())
 
 // routes
-app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to my server' })
+app.post('/post-blog', async (req, res) => {
+    const { title, description } = req.body
+    const newBlogPost = new BlogPost({ title, description })
+    await newBlogPost.save()
+    res.json(newBlogPost)
+
 })
 
 
