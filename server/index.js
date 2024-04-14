@@ -3,6 +3,8 @@ const app = express();
 const cors = require('cors');
 const port = 3000;
 const { connectDb } = require('./connection')
+const { BlogPost } = require('./models/BlogPost')
+
 
 // connect to database
 connectDb()
