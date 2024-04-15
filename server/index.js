@@ -45,10 +45,9 @@ app.delete('/delete-blog/:id', async (req, res) => {
     const blogPost = await BlogPost.findByIdAndDelete(req.params.id)
     if (!blogPost) {
         return res.status(404).json({ message: "No blog post found" })
-
     }
     else {
-        res.status(201).json("Blog post deleted successfully")
+        res.status(200).json("Blog post deleted successfully")
     }
 })
 
