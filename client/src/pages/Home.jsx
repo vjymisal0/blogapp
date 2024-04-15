@@ -17,7 +17,7 @@ const Home = () => {
       {posts.map((post) => {
         return (
           <div
-            className="w-[40vw] mx-auto border p-4  rounded-md"
+            className="w-[40vw] mx-auto border p-4  rounded-md m-5"
             key={post._id}
           >
             <div className="flex justify-end gap-3 text-3xl ">

@@ -8,7 +8,7 @@ import "./App.css";
 const App = () => {
   return (
     <>
-      <div className="text-white">
+      {/* <div className="text-white"> */}
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -16,7 +16,7 @@ const App = () => {
             <Route path="/create" element={<CreateBlog />} />
           </Routes>
         </BrowserRouter>
-      </div>
+      {/* </div> */}
     </>
   );
 };

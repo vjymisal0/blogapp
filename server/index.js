@@ -22,7 +22,7 @@ app.post('/post-blog', async (req, res) => {
         return res.status(400).json({ message: "Blog post not created" })
     }
     else {
-        res.status(201).json("Blog post created successfully")
+        res.status(200).json("Blog post created successfully")
     }
 
 })

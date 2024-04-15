@@ -1,15 +1,45 @@
 import React from "react";
 import {} from "react-icons";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 const CreateBlog = () => {
-  const postData = (e) => {
+  const navigate = useNavigate();
+  const postData = async (e) => {
     e.preventDefault();
     const title = e.target.title.value;
     const description = e.target.description.value;
-    const data = { title, description };
+    const blog = { title, description };
+    const response = await fetch("http://localhost:3000/post-blog", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(blog),
+    });
+    if (response.status === 200) {
+      // alert("Blog posted successfully");
+      // Notiflix.Notify.success("Blog posted successfully");
+      Swal.fire({
+        title: "Success",
+        text: "Blog posted successfully",
+        icon: "success",
+      });
+      e.target.title.value = "";
+      e.target.description.value = "";
+      navigate("/");
+    } else {
+      // alert("Failed to post blog");
+      Swal.fire({
+        title: "Error",
+        text: "Failed to post blog",
+        icon: "error",
+      });
+    }
   };
+
   return (
     <div
-      className="w-[90vw] lg:w-[60vw] mx-auto mt-10 items-center p-5 rounded-lg border 
+      className="w-[90vw] lg:w-[60vw] mx-auto mt-10 items-center p-5 rounded-lg border
     "
     >
       <h1 className="text-2xl font-bold text-center">Create Blog</h1>
@@ -21,18 +51,18 @@ const CreateBlog = () => {
           type="text"
           id=""
           name="title"
-          className="px-3 py-2 rounded-md border-white border-2"
+          className="px-3 py-2 rounded-md border-white border-2 bg-customBackground"
         />
         <label htmlFor="description" className="font-semibold text-lg">
           Description:{" "}
         </label>
         <textarea
           name="description"
-          className="p-3 rounded-md border-white border-2"
+          className="p-3 rounded-md border-white border-2 bg-customBackground"
           rows={8}
         />
         <button
-          type="button"
+          type="submit"
           class="text-white  border rounded-md mx-auto px-6 hover:bg-white 
           hover:text-blue-900
           hover:scale-110 transition-all"
