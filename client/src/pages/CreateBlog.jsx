@@ -27,11 +27,12 @@ const CreateBlog = () => {
       e.target.title.value = "";
       e.target.description.value = "";
       navigate("/");
-    } else {
+    } else if (response.status === 400) {
       // alert("Failed to post blog");
+      // check if title or description is missing
       Swal.fire({
-        title: "Error",
-        text: "Failed to post blog",
+        title: "Failed",
+        text: "Failed! title or description is missing",
         icon: "error",
       });
     }

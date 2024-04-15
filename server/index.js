@@ -15,13 +15,16 @@ app.use(cors())
 
 // route to create a new blog post
 app.post('/post-blog', async (req, res) => {
-    const { title, description } = req.body
-    const newBlogPost = new BlogPost({ title, description })
-    await newBlogPost.save()
-    if (!newBlogPost) {
-        return res.status(400).json({ message: "Blog post not created" })
+    const blogPost = new BlogPost({
+        title: req.body.title,
+        description: req.body.description
+
+    })
+    if (!req.body.title || !req.body.description) {
+        return res.status(400).json({ message: "Title or description is missing" })
     }
     else {
+        await blogPost.save()
         res.status(200).json("Blog post created successfully")
     }
 
