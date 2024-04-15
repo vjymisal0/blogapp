@@ -53,6 +53,12 @@ const Home = () => {
         text: "Blog has been updated successfully",
         icon: "success",
       });
+    } else {
+      Swal.fire({
+        title: "Failed",
+        text: "Failed to update blog",
+        icon: "error",
+      });
     }
   };
   // console.log(title, description);
@@ -85,7 +91,7 @@ const Home = () => {
               />
             </div>
             <h2
-              className="text-xl font-bold text-justify  my-1 outline-none"
+              className="text-xl font-bold text-justify  my-1 "
               contentEditable={editPost}
               onInput={(e) => {
                 setTitle(e.target.innerText);
@@ -94,7 +100,7 @@ const Home = () => {
               {post.title}
             </h2>
             <h3
-              className="font-semibold text-sm text-justify m-3 outline-none"
+              className="font-semibold text-sm text-justify m-3 "
               contentEditable={editPost}
               onInput={(e) => {
                 setDescription(e.target.innerText);
@@ -105,7 +111,8 @@ const Home = () => {
             <button
               className={`${
                 selectedPost === post._id && editPost ? "block" : "hidden"
-              } text-white  border rounded-md mx-auto px-6 hover:bg-white 
+              }
+               text-white  border rounded-md mx-auto px-6 hover:bg-white 
           hover:text-blue-900
           hover:scale-110 transition-all`}
               onClick={() => {
