@@ -3,7 +3,11 @@ import { AiFillDelete } from "react-icons/ai";
 import { MdOutlineEdit } from "react-icons/md";
 import Swal from "sweetalert2";
 const Home = () => {
+  
   const [posts, setPosts] = useState([]);
+  const [editPost, setEditPost] = useState(false);
+
+
   const getPosts = async () => {
     const response = await fetch("http://localhost:3000/get-blogs");
     const data = await response.json();
@@ -59,6 +63,13 @@ const Home = () => {
             <h3 className="font-semibold text-sm text-justify m-3">
               {post.description}
             </h3>
+            <button
+              className="text-white  border rounded-md mx-auto px-6 hover:bg-white 
+          hover:text-blue-900
+          hover:scale-110 transition-all"
+            >
+              Save
+            </button>
           </div>
         );
       })}

@@ -64,7 +64,7 @@ const CreateBlog = () => {
         />
         <button
           type="submit"
-          class="text-white  border rounded-md mx-auto px-6 hover:bg-white 
+          className="text-white  border rounded-md mx-auto px-6 hover:bg-white 
           hover:text-blue-900
           hover:scale-110 transition-all"
         >
