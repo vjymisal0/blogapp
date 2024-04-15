@@ -18,7 +18,13 @@ app.post('/post-blog', async (req, res) => {
     const { title, description } = req.body
     const newBlogPost = new BlogPost({ title, description })
     await newBlogPost.save()
-    res.json("Blog post saved successfully", newBlogPost)
+    if (!newBlogPost) {
+        return res.status(400).json({ message: "Blog post not created" })
+    }
+    else {
+        res.status(201).json("Blog post created successfully")
+    }
+
 })
 
 // route to get all blog posts
@@ -39,27 +45,31 @@ app.delete('/delete-blog/:id', async (req, res) => {
 
     }
     else {
-        res.status(200).json("Blog post deleted successfully")
+        res.status(201).json("Blog post deleted successfully")
     }
 })
 
 // route to update a blog post
 app.put('/update-blog/:id', async (req, res) => {
-    const { title, description } = req.body
-    const updatedBlogPost = await Blog
-    Post.findByIdAndUpdate(req.params.id, {
-        title
-        , description
-    }, {
-        new: true
-
-    })
-    if (!updatedBlogPost) {
+    const blogPost = await BlogPost.findByIdAndUpdate(req.params.id)
+    if (!blogPost) {
         return res.status(404).json({ message: "No blog post found" })
     }
-    else {
-        res.status(200).json("Blog post updated successfully", updatedBlogPost)
+    if (!req.body.title || !req.body.description) {
+        return res.status(400).json({ message: "Title or description is missing" })
     }
+    else if (!req.body.title) {
+        blogPost.description = req.body.description
+    }
+    else if (!req.body.description) {
+        blogPost.title = req.body.title
+    }
+    else {
+        blogPost.title = req.body.title
+        blogPost.description = req.body.description
+    }
+    await blogPost.save()
+    res.status(201).json("Blog post updated successfully")
 }
 )
 
