@@ -21,7 +21,7 @@ const CreateBlog = () => {
       // Notiflix.Notify.success("Blog posted successfully");
       Swal.fire({
         title: "Success",
-        text: "Blog posted successfully",
+        text: "Blog has been posted successfully",
         icon: "success",
       });
       e.target.title.value = "";
