@@ -53,16 +53,9 @@ const Home = () => {
         text: "Blog has been updated successfully",
         icon: "success",
       });
-    } else if (response.status === 400) {
-      Swal.fire({
-        title: "Failed",
-        text: "Failed! title or description is missing",
-        icon: "error",
-      });
-    } 
     }
-    // console.log(title, description);
   };
+  // console.log(title, description);
 
   return (
     <div className="my-10">
@@ -92,7 +85,7 @@ const Home = () => {
               />
             </div>
             <h2
-              className="text-xl font-bold text-justify  my-1"
+              className="text-xl font-bold text-justify  my-1 outline-none"
               contentEditable={editPost}
               onInput={(e) => {
                 setTitle(e.target.innerText);
@@ -101,7 +94,7 @@ const Home = () => {
               {post.title}
             </h2>
             <h3
-              className="font-semibold text-sm text-justify m-3"
+              className="font-semibold text-sm text-justify m-3 outline-none"
               contentEditable={editPost}
               onInput={(e) => {
                 setDescription(e.target.innerText);

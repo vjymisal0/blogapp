@@ -50,6 +50,7 @@ const CreateBlog = () => {
         </label>
         <input
           type="text"
+          placeholder="Enter your blog title here..."
           id=""
           name="title"
           className="px-3 py-2 rounded-md border-white border-2 bg-customBackground"
@@ -58,6 +59,7 @@ const CreateBlog = () => {
           Description:{" "}
         </label>
         <textarea
+          placeholder="Enter your blog description here..."
           name="description"
           className="p-3 rounded-md border-white border-2 bg-customBackground"
           rows={8}

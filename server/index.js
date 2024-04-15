@@ -58,15 +58,7 @@ app.put('/update-blog/:id', async (req, res) => {
         return res.status(404).json({ message: "No blog post found" })
     }
     else {
-        if (!req.body.title || !req.body.description) {
-            return res.status(400).json({ message: "Title or description is missing" })
-        }
 
-        else if (blogPost.title === req.body.title && blogPost.description !== req.body.description) {
-            blogPost.description = req.body.description
-            await blogPost.save()
-            res.status(200).json("Blog post updated successfully")
-        }
         blogPost.title = req.body.title
         blogPost.description = req.body.description
         await blogPost.save()
