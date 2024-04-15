@@ -22,7 +22,6 @@ app.post('/post-blog', async (req, res) => {
 })
 
 // route to get all blog posts
-
 app.get("/get-blogs", async (req, res) => {
     const blogPosts = await BlogPost.find()
     if (!blogPosts) {
@@ -33,7 +32,16 @@ app.get("/get-blogs", async (req, res) => {
 })
 
 // route to delete a blog post
+app.delete('/delete-blog/:id', async (req, res) => {
+    const blogPost = await BlogPost.findByIdAndDelete(req.params.id)
+    if (!blogPost) {
+        return res.status(404).json({ message: "No blog post found" })
 
+    }
+    else {
+        res.status(200).json("Blog post deleted successfully")
+    }
+})
 
 // listen server
 app.listen(port, () => {
