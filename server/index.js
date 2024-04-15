@@ -43,6 +43,26 @@ app.delete('/delete-blog/:id', async (req, res) => {
     }
 })
 
+// route to update a blog post
+app.put('/update-blog/:id', async (req, res) => {
+    const { title, description } = req.body
+    const updatedBlogPost = await Blog
+    Post.findByIdAndUpdate(req.params.id, {
+        title
+        , description
+    }, {
+        new: true
+
+    })
+    if (!updatedBlogPost) {
+        return res.status(404).json({ message: "No blog post found" })
+    }
+    else {
+        res.status(200).json("Blog post updated successfully", updatedBlogPost)
+    }
+}
+)
+
 // listen server
 app.listen(port, () => {
     console.log(`Server is running on port ${port} click here to open: http://localhost:${port}`)
