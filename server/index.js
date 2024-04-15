@@ -57,21 +57,21 @@ app.put('/update-blog/:id', async (req, res) => {
     if (!blogPost) {
         return res.status(404).json({ message: "No blog post found" })
     }
-    if (!req.body.title || !req.body.description) {
-        return res.status(400).json({ message: "Title or description is missing" })
-    }
-    else if (!req.body.title) {
-        blogPost.description = req.body.description
-    }
-    else if (!req.body.description) {
-        blogPost.title = req.body.title
-    }
     else {
+        if (!req.body.title || !req.body.description) {
+            return res.status(400).json({ message: "Title or description is missing" })
+        }
+
+        else if (blogPost.title === req.body.title && blogPost.description !== req.body.description) {
+            blogPost.description = req.body.description
+            await blogPost.save()
+            res.status(200).json("Blog post updated successfully")
+        }
         blogPost.title = req.body.title
         blogPost.description = req.body.description
+        await blogPost.save()
+        res.status(200).json("Blog post updated successfully")
     }
-    await blogPost.save()
-    res.status(201).json("Blog post updated successfully")
 }
 )
 
