@@ -1,7 +1,13 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { MdOutlineEdit } from "react-icons/md";
 const Home = () => {
+  const [posts, setPosts] = useState([]);
+  const getPosts = async () => {
+    const response = await fetch("http://localhost:5000/get-blogs");
+    const data = await response.json();
+    setPosts(data);
+  };
   return (
     <div className="mt-10">
       <div className="w-[40vw] mx-auto border p-4  rounded-md">
