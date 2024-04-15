@@ -58,7 +58,6 @@ app.put('/update-blog/:id', async (req, res) => {
         return res.status(404).json({ message: "No blog post found" })
     }
     else {
-
         blogPost.title = req.body.title
         blogPost.description = req.body.description
         await blogPost.save()
