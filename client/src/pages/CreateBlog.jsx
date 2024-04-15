@@ -1,13 +1,19 @@
 import React from "react";
 import {} from "react-icons";
 const CreateBlog = () => {
+  const postData = (e) => {
+    e.preventDefault();
+    const title = e.target.title.value;
+    const description = e.target.description.value;
+    const data = { title, description };
+  };
   return (
     <div
       className="w-[90vw] lg:w-[60vw] mx-auto mt-10 items-center p-5 rounded-lg border 
     "
     >
       <h1 className="text-2xl font-bold text-center">Create Blog</h1>
-      <form action="" className="flex flex-col gap-5 mt-7">
+      <form action="" className="flex flex-col gap-5 mt-7" onSubmit={postData}>
         <label htmlFor="title" className="font-semibold text-lg">
           Title:{" "}
         </label>
