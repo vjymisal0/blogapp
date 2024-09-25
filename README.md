@@ -28,13 +28,11 @@ A simple and elegant blog application where users can create, edit, and delete b
 ![Home Page](./screenshots/home.png)
 
 ### Create Blog Post
-![Create Blog](./screenshots/create_blog.png)
+![Create Blog](./screenshots/create.png)
 
-### Blog Details
-![Blog Details](./screenshots/blog_details.png)
 
 ### Edit Blog Post
-![Edit Blog](./screenshots/edit_blog.png)
+![Edit Blog](./screenshots/edit.png)
 
 > You can find all screenshots in the `screenshots` folder in the repository.
 
@@ -43,37 +41,32 @@ A simple and elegant blog application where users can create, edit, and delete b
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/blog-app.git
+    git clone https://github.com/vjymisal0/blogapp.git
     ```
 
-2. Navigate to the project directory:
+2. Navigate to the two different directories for frontend and backend:
 
     ```bash
-    cd blog-app
+    cd client
     ```
 
-3. Install dependencies:
+    ```bash
+    cd server
+    ```
+
+3. Install dependencies in both the terminals:
 
     ```bash
     npm install
-    ```
+    ```   
 
-4. Set up environment variables:
-
-    Create a `.env` file in the root of the project with the following values:
-
-    ```plaintext
-    DATABASE_URL=mongodb://localhost:27017/blog-app
-    JWT_SECRET=your_jwt_secret
-    ```
-
-5. Start the development server:
+4. Start the development server:
 
     ```bash
-    npm start
+    npm start or npm run dev
     ```
 
-6. Open your browser and navigate to `http://localhost:3000`.
+5. Open your browser and navigate to `http://localhost:3000` for backend & "http://localhost:5050" for frontend to view the app.
 
 ## Usage
 
@@ -86,9 +79,8 @@ A simple and elegant blog application where users can create, edit, and delete b
 - **Frontend**: HTML5, CSS3, JavaScript, [React.js or other framework/library]
 - **Backend**: Node.js, Express
 - **Database**: MongoDB
-- **Authentication**: JWT (JSON Web Tokens)
 - **Styling**: [Tailwind CSS / Bootstrap / Custom CSS]
-- **Deployment**: [Heroku / Vercel / Netlify]
+- **Deployment**: [Vercel / Netlify]
 
 ## Contributing
 
